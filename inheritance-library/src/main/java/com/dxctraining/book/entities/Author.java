@@ -1,7 +1,6 @@
 package com.dxctraining.book.entities;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import com.dxctraining.book.entities.Book;
 @Entity
 public class Author {

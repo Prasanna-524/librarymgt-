@@ -1,8 +1,7 @@
 package com.dxctraining.fictionbook.entities;
 	import javax.persistence.Entity;
 
-	import com.dxctraining.book.entities.Author;
-	import com.dxctraining.book.entities.*;
+import com.dxctraining.book.entities.*;
 	@Entity
 	public class FictionBook extends Book {
 
@@ -20,6 +19,23 @@ package com.dxctraining.fictionbook.entities;
 	public void setFbookname(String fbookname) {
 		this.fbookname = fbookname;
 	}
+	public int hashCode()
+	{
+		return getBookid();
 	}
+	public boolean equals(Object arg) {
+		if(this==arg) {
+			return true;
+		}
+		
+	   if(arg==null || !(arg instanceof Book) ) {
+			return false;
+	   }
+		
+	    Book that=(Book)arg;	
+		boolean isequal=this.getBookid()==that.getBookid();
+		return isequal;
+	}
+    }
 
 		

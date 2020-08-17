@@ -19,5 +19,21 @@ public class ItBook extends Book {
 	public void setBookname(String bookname) {
 		this.bookname = bookname;
 	}
+public int hashCode()
+{
+	return getBookid();
 }
+public boolean equals(Object arg) {
+	if(this==arg) {
+		return true;
+	}
 	
+   if(arg==null || !(arg instanceof Book) ) {
+		return false;
+   }
+	
+    Book that=(Book)arg;	
+	boolean isequal=this.getBookid()==that.getBookid();
+	return isequal;
+}
+}
