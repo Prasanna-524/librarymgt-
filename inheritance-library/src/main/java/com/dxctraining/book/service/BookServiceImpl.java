@@ -14,7 +14,7 @@ public class BookServiceImpl implements BookService{
 	private BookDao dao;
 
     @Override
-    public Book findBookbyId(String id) {
+    public Book findBookbyId(int id) {
         Book book= dao.findBookbyId(id);
         return book;
     }
@@ -25,7 +25,7 @@ public class BookServiceImpl implements BookService{
         return book;
     }
     @Override
-    public void remove(String id) {
+    public void remove(int id) {
        dao.remove(id);
     }
     public Book add(Book book) {

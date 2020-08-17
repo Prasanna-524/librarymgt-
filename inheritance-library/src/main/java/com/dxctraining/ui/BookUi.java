@@ -34,18 +34,17 @@ public class BookUi {
 		try {
 			Author author1 = new Author(1,"chinni");
 			Author author2 = new Author(2,"sri");
-			Book book1 = new Book(101,"c", 3, author1);
-			Book book2 = new Book(102,"java", 8, author1);
-			Book book3 = new Book(103,"oops", 2, author2);
-			Book book4 = new Book(104,"dbms", 4, author2);
 			FictionBook fictionbook = new FictionBook(11,"farm",3,author1,"animal farm");
             fictionbook=FictionBookService.addBook(fictionbook);
-
+            String fictionbook1=fictionbook.getName();
+            FictionBook fictionbook=FictionBookService.findBookByid(fictionbook1);
+            System.out.println("fiction book name =" +fictionbook.getName() + " fiction book edition" + fictionbook.getEdition()+ " author is" + fictionbook.getAuthor())
+            
             ItBook itbook = new ItBook(12,"morris",3,author1,"beloved");
             itbook=ItBookService.addBook(itbook);
 	            String itbook1 = itbook.getName();
-	            FictionBook itbook = FictionBookService.findBookById(itbook1);
-	            System.out.println("it book name =" + itbook.getName() + " it book edition" + itbook.getEdition()+ " " + fbook.getAuthor());
+	            ItBook itbook = ItBookService.findBookById(itbook1);
+	            System.out.println("it book name =" + itbook.getName() + " it book edition" + itbook.getEdition()+ "author is " + itbook.getAuthor());
 
 
 	        } catch (BookNotFoundException e) {

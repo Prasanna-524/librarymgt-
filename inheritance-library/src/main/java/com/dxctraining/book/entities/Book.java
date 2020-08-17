@@ -13,6 +13,7 @@ public class Book {
     private String name;
 
     private int edition;
+    @ManyToOne
     private Author author;
 
     public Book(int bookid, String name, int edition,Author author) {

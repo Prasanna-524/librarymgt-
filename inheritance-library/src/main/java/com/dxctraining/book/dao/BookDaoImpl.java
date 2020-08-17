@@ -18,7 +18,7 @@ public class BookDaoImpl implements BookDao{
     @PersistenceContext
     private EntityManager entityManager;
     @Override
-    public Book findBookbyId(String id) {
+    public Book findBookbyId(int id) {
         Book book=entityManager.find(Book.class,id);
         if(book==null)
         {
@@ -34,7 +34,7 @@ public class BookDaoImpl implements BookDao{
         book=entityManager.merge(book);
        return book;
     }
-    public void remove(String id) {
+    public void remove(int id) {
         Book book=findBookbyId(id);
         entityManager.remove(book);
     }
