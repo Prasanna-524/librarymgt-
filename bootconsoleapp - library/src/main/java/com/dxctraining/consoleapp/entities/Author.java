@@ -1,10 +1,17 @@
 package com.dxctraining.consoleapp.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Author  {
+	@Id
+	  @GeneratedValue
 	    private int id;
 	    private String name;
 
-	    public Author(int id, String name) {
-	        this.id = id;
+	    public Author(String name) {
 	        this.name = name;
 	    }
 	    public int getId() {

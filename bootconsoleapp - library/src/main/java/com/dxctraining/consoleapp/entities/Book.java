@@ -1,13 +1,18 @@
 package com.dxctraining.consoleapp.entities;
 
-public class Book {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Book {
+	 @Id
+	  @GeneratedValue
 	    private int id;
 	    private String name;
 	    private double cost;
 	    private Author author;
-	    public Book(int id,String name, double cost,Author author) {
-	        this.id=id;
+	    public Book(String name, double cost,Author author) {
 	        this.name = name;
 	        this.cost = cost;
 	        this.author=author;
